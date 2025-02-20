@@ -1,5 +1,22 @@
-# Vue 3 + TypeScript + Vite
+# ReBLOG 管理后台
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+ReBLOG 是一款基于 Vue.js、Node.js 和 MySQL 的博客系统，本项目是 ReBLOG 的管理后台，提供了对博客内容的管理功能，如文章管理、用户管理、评论管理等。
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## 技术栈
+
+- **前端**：Vue 3 + Vite + Vue Router + Pinia
+- **后端**：Node.js + Express
+- **数据库**：MySQL
+- **开发工具**：Git, VSCode, Postman
+- **部署平台**：Heroku / Docker
+
+## 功能特性
+
+- **文章管理**：创建、编辑、删除文章，支持富文本编辑器
+- **用户管理**：查看、编辑用户信息，管理用户权限
+- **评论管理**：查看、删除文章评论
+- **分类与标签管理**：管理文章分类和标签
+- **权限管理**：后台用户角色管理（如管理员、编辑）
+
+## 项目结构
+
