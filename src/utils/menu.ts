@@ -1,0 +1,32 @@
+export const navLinks=[
+    {
+        path:'overview',
+        name:'总览',
+        icon:'IconHomepageFill'
+    },
+    {
+        path:'localfile',
+        name:'本地文件',
+        icon:'IconFolderCloseFill'
+    },
+    {
+        path:'article',
+        name:'文章',
+        icon:'IconFileFill'
+    },
+    {
+        path:'gallery',
+        name:'摄影图库',
+        icon:'IconCameraFill'
+    },
+    {
+        path:'diary',
+        name:'日记',
+        icon:'IconBookmarkFill'
+    },
+    {
+        path:'setting',
+        name:'设置',
+        icon:'IconSettingsFill'
+    },
+]

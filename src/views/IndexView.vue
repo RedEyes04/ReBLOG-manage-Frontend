@@ -1,15 +1,11 @@
 <template>
-<div>菜单</div>
-<router-view/>
+  <menu-bar />
+  <router-view />
 </template>
 
-<script lang = "ts">
-export default {
-  name: 'IndexView',
-  // 其他配置
-}
+<script lang="ts">
+import MenuBar from '../components/bar/MenuBar.vue'
+
 </script>
 
-<style lang = "less" scoped>
-
-</style>
+<style lang="less" scoped></style>

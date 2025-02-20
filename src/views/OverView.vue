@@ -1,5 +1,5 @@
 <template>
-    <div>这是总览页面</div>
+    <!-- <div>总览</div> -->
 </template>
 
 <script lang="ts">
