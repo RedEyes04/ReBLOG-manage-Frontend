@@ -8,7 +8,7 @@ ReBLOG 是一款基于 Vue.js、Node.js 和 MySQL 的博客系统，本项目是
 - **后端**：Node.js + Express
 - **数据库**：MySQL
 - **开发工具**：Git, VSCode, Postman
-- **部署平台**：Heroku / Docker
+- **部署平台**：Linux / Windows
 
 ## 功能特性
 
