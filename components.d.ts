@@ -20,7 +20,6 @@ declare module 'vue' {
     YkBadge: typeof import('@yike-design/ui')['YkBadge']
     YkButton: typeof import('@yike-design/ui')['YkButton']
     YkInputSearch: typeof import('@yike-design/ui')['YkInputSearch']
-    YkRate: typeof import('@yike-design/ui')['YkRate']
     YkSpace: typeof import('@yike-design/ui')['YkSpace']
     YkText: typeof import('@yike-design/ui')['YkText']
     YkTheme: typeof import('@yike-design/ui')['YkTheme']

@@ -19,6 +19,7 @@
     "@vue/tsconfig": "^0.7.0",
     "@yike-design/resolver": "^0.0.1",
     "@yike-design/ui": "^0.0.20",
+    "mockjs": "^1.1.0",
     "typescript": "~5.7.2",
     "unplugin-auto-import": "^19.1.0",
     "unplugin-vue-components": "^28.4.0",
