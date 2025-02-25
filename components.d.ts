@@ -8,9 +8,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Gather: typeof import('./src/components/overview/gather.vue')['default']
     HeaderBar: typeof import('./src/components/bar/HeaderBar.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconMailOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconMailOutline']
+    IconPlusOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconPlusOutline']
     IconSearchOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconSearchOutline']
     MenuBar: typeof import('./src/components/bar/MenuBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
