@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Datas: typeof import('./src/components/overview/datas.vue')['default']
     Gather: typeof import('./src/components/overview/gather.vue')['default']
     HeaderBar: typeof import('./src/components/bar/HeaderBar.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
@@ -22,6 +23,8 @@ declare module 'vue' {
     YkBadge: typeof import('@yike-design/ui')['YkBadge']
     YkButton: typeof import('@yike-design/ui')['YkButton']
     YkInputSearch: typeof import('@yike-design/ui')['YkInputSearch']
+    YkRadio: typeof import('@yike-design/ui')['YkRadio']
+    YkRadioGroup: typeof import('@yike-design/ui')['YkRadioGroup']
     YkSpace: typeof import('@yike-design/ui')['YkSpace']
     YkText: typeof import('@yike-design/ui')['YkText']
     YkTheme: typeof import('@yike-design/ui')['YkTheme']
