@@ -13,3 +13,13 @@ export const overview = Mock.mock({
     }
 	
 })
+
+export const visit = Mock.mock({
+	"data|30": [
+	  {
+		//时间
+		"date": "@datetime('MM-dd')",
+		"count|10-100": 12,
+	  }
+	]
+  })
