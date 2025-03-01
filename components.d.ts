@@ -17,6 +17,7 @@ declare module 'vue' {
     IconSearchOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconSearchOutline']
     Line: typeof import('./src/components/echarts/line.vue')['default']
     MenuBar: typeof import('./src/components/bar/MenuBar.vue')['default']
+    Pie: typeof import('./src/components/echarts/pie.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TopTitle: typeof import('./src/components/bar/TopTitle.vue')['default']
