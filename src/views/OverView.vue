@@ -4,7 +4,7 @@
     <gather />
     <yk-space style="width: 100%;">
       <datas />
-      <Comment/>
+      <Comment style="width: 50%;"/>
     </yk-space>
   </yk-space>
 </template>

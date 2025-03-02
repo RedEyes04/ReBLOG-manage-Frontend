@@ -1,8 +1,8 @@
 <template>
   <yk-space dir="vertical" size="xl" style="width: 50%;">
-    <div class="data-card card">
-      <div class="data-card__title">
-        <p class="data-card__title-name">访问量</p>
+    <div class="card card">
+      <div class="card__title">
+        <p class="card__title-name">访问量</p>
         <yk-radio-group v-model="visitRadio" type="button" :solid="true" @change="getVisit">
           <yk-radio value="week">近一周</yk-radio>
           <yk-radio value="month">近一月</yk-radio>
@@ -10,9 +10,9 @@
       </div>
       <LineChart chart-height="208px" :data="visitData" />
     </div>
-    <div class="data-card">
-      <div class="data-card__title">
-        <p class="data-card__title-name">数据监测</p>
+    <div class="card">
+      <div class="card__title">
+        <p class="card__title-name">数据监测</p>
         <yk-radio-group v-model="cheakRadio" type="button" :solid="true">
           <yk-radio value="week">近一周</yk-radio>
           <yk-radio value="month">近一月</yk-radio>
