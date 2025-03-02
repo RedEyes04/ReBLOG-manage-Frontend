@@ -8,6 +8,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Comment: typeof import('./src/components/reply/comment.vue')['default']
     Datas: typeof import('./src/components/overview/datas.vue')['default']
     Gather: typeof import('./src/components/overview/gather.vue')['default']
     HeaderBar: typeof import('./src/components/bar/HeaderBar.vue')['default']
@@ -15,9 +16,11 @@ declare module 'vue' {
     IconMailOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconMailOutline']
     IconPlusOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconPlusOutline']
     IconSearchOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconSearchOutline']
+    Information: typeof import('./src/components/reply/information.vue')['default']
     Line: typeof import('./src/components/echarts/line.vue')['default']
     MenuBar: typeof import('./src/components/bar/MenuBar.vue')['default']
     Pie: typeof import('./src/components/echarts/pie.vue')['default']
+    Reply: typeof import('./src/components/reply/reply.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TopTitle: typeof import('./src/components/bar/TopTitle.vue')['default']

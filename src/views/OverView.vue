@@ -4,9 +4,7 @@
     <gather />
     <yk-space style="width: 100%;">
       <datas />
-      <div class="report" style="background-color: aqua;">
-        评论（待做）
-      </div>
+      <Comment/>
     </yk-space>
   </yk-space>
 </template>
@@ -19,6 +17,7 @@ export default {
 import TopTitle from '../components/bar/TopTitle.vue';
 import gather from '../components/overview/gather.vue'
 import datas from '../components/overview/datas.vue'
+import {Comment} from "../components/reply"
 </script>
 
 <style lang="less" scoped></style>

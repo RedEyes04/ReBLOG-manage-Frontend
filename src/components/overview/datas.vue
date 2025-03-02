@@ -1,6 +1,6 @@
 <template>
   <yk-space dir="vertical" size="xl" style="width: 50%;">
-    <div class="data-card">
+    <div class="data-card card">
       <div class="data-card__title">
         <p class="data-card__title-name">访问量</p>
         <yk-radio-group v-model="visitRadio" type="button" :solid="true" @change="getVisit">
@@ -52,22 +52,5 @@ onMounted(() => {
 </script>
 
 <style lang="less" scoped>
-.data-card {
-  padding: @space-xl;
-  border-radius: @radius-m;
-  background: @bg-color-l;
-  width: 100%;
 
-  &__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &-name {
-      .font-l();
-      font-weight: 600;
-      color: @font-color-l;
-    }
-  }
-}
 </style>
