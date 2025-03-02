@@ -60,3 +60,27 @@ export const survey = Mock.mock({
     ]
   }
 })
+
+
+//评论数据
+
+export const comment = Mock.mock({
+  "data":{
+    "count":123,
+    "list|123":[{
+      "id+1":0,
+      "article":{
+        "id|+1":2,
+        "name":"@ctitle(3,13)"
+      },
+      "user":[{
+        "id|+1":3,
+        "name":"@ctitle(3,13)",
+        "imgurl":"https://bucket.redeyes.top/avater.wepb",
+      }],
+      "comment":"@cparagraph(1,4)",
+      "moment":"@datetime()",
+      "complaint|0-12":0
+    }]
+  }
+})
