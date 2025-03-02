@@ -1,6 +1,6 @@
 <template>
   <yk-space dir="vertical" size="xl" style="width: 50%;">
-    <div class="card card">
+    <div class="card">
       <div class="card__title">
         <p class="card__title-name">访问量</p>
         <yk-radio-group v-model="visitRadio" type="button" :solid="true" @change="getVisit">
