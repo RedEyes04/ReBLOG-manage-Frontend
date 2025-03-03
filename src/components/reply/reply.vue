@@ -6,23 +6,25 @@
         <yk-space dir="vertical" size="s" class="reply__main">
             <div class="reply__name">
                 <yk-text strong>
-                    REDEYES
+                    {{ content?.user.name }}
                 </yk-text>
                 <yk-text style="font-size: 12px;" type="third">
-                    2025-3-4 00:01:21
+                    {{ content?.moment }}
                 </yk-text>
             </div>
 
 
             <yk-text type="secondary">
-                这是一条评论
+                {{ content?.comment }}
             </yk-text>
             <yk-space size="s" align="center">
                 <yk-tag type="primary" >
-                    我是标签
+                    {{ content?.article?.title }}
                 </yk-tag>
-                <yk-text type="danger ">
-                    举报 4
+                <yk-text type="danger "
+                v-show="content?.complaint!>0"
+                >
+                    举报 {{ content?.complaint }}
                 </yk-text>
             </yk-space>
 
@@ -33,7 +35,10 @@
 </template>
 
 <script lang="ts" setup>
-
+import type { ReplyProps } from './reply';
+const props = withDefaults(defineProps<ReplyProps>(),{
+  isComment:true
+})
 </script>
 
 <style lang="less" scoped>

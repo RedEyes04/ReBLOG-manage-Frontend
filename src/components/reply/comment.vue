@@ -5,7 +5,8 @@
       <p class="card__title-name">评论 {{ count }}</p>
 
     </div>
-    <reply style="padding-top: 12px;"/>
+    <reply  v-for="item in comments" :key="item.id" :content="item"/>
+    <!-- <reply /> -->
   </div>
 </template>
 
@@ -29,22 +30,21 @@ type Request={
   token?: string;
   pageSize: number;//单页条数；
   nowPage: number;//当前页
-  count?:false
 }
 
 const request:Request={
   pageSize:props.pageSize,
   nowPage:1,
-  count:false
+  // count:false
 }
 //获取数据
 const drwCommentData=(e:boolean)=>{
-  let data = comment
+  let data = comment.data
   console.log(data)
   if(e){
     count.value = data.count
   }
-  comment.value = data.list.slice(
+  comments.value = data.list.slice(
     (request.nowPage - 1) * request.pageSize,
     request.nowPage * request.pageSize
   )

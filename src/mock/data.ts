@@ -62,8 +62,9 @@ export const survey = Mock.mock({
 })
 
 
-//评论数据
 
+
+//评论
 export const comment = Mock.mock({
   "data": {
     "count": 123,
