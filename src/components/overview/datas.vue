@@ -19,8 +19,8 @@
         </yk-radio-group>
       </div>
       <div style="display: flex;">
-        <PieChart title="设备总数" :data="survey.data.device" chart-height="208px" />
-        <PieChart title="访问总数" :data="survey.data.website" chart-height="208px" />
+        <PieChart title="设备总数" :data="survey.data.device" chart-height="260px" />
+        <PieChart title="访问总数" :data="survey.data.website" chart-height="260px" />
       </div>
     </div>
 

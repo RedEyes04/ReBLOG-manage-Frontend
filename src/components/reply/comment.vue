@@ -7,23 +7,25 @@
     </div>
     <yk-scrollbar ref="scrollbar" :height="height" style="padding: 0 24px;">
       <yk-space dir="vertical">
-        <reply v-for="item in comments" :key="item.id" :content="item" style="padding-top: 15px;" />
+        <reply v-for="item in comments" :key="item.id" :content="item" style="padding-top: 15px;" @delete="deleteComment"/>
         <!-- <reply /> -->
       </yk-space>
     </yk-scrollbar>
     <div class="comment__pagination">
-      <yk-pagination :total="count" size="m" />
+      <yk-pagination :total="count" size="m" @change="changePage"/>
 
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref ,getCurrentInstance} from 'vue';
 import reply from "./reply.vue"
 import { comment } from "../../mock/data"
 import type { CommentProps } from './reply';
 
+
+const proxy:any=getCurrentInstance()?.proxy
 const props = withDefaults(defineProps<CommentProps>(), {
   pageSize: 8,
   height:"650px"
@@ -47,19 +49,33 @@ const request: Request = {
   // count:false
 }
 //获取数据
-const drwCommentData = (e: boolean) => {
+const drwCommentData = () => {
   let data = comment.data
   console.log(data)
-  if (e) {
-    count.value = data.count
-  }
+ 
   comments.value = data.list.slice(
     (request.nowPage - 1) * request.pageSize,
     request.nowPage * request.pageSize
   )
 }
+//翻页
+const changePage=(e:number)=>{
+  request.nowPage=e;
+  drwCommentData( )
+}
+
+
+//删除评论
+const deleteComment = (e: number) => {
+  comments.value = comments.value.filter((obj: any) => {
+    return obj.id !== e
+  })
+  proxy.$message({ type: 'primary', message: '删除成功' })
+
+}
+
 onMounted(() => {
-  drwCommentData(true)
+  drwCommentData()
 })
 
 </script>

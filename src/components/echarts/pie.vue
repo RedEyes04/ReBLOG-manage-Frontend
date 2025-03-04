@@ -63,7 +63,7 @@ const survey = (e: any) => {
     },
     legend: {
       show: true,
-      bottom: 0,
+      bottom: -5,
       icon: 'circle',
       textStyle: {
         color: '#7F8C8D' // 设置图例文字颜色
