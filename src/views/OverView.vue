@@ -2,9 +2,9 @@
   <yk-space dir="vertical" size="xl">
     <TopTitle :is-search="false" />
     <gather />
-    <yk-space style="width: 100%;">
+    <yk-space style="width: 100%;" size="xl">
       <datas />
-      <Comment style="width: 50%;"/>
+      <Comment style="width: 50%;" height="500px"/>
     </yk-space>
   </yk-space>
 </template>

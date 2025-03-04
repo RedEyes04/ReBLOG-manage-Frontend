@@ -22,7 +22,7 @@
                     {{ content?.article?.title }}
                 </yk-tag>
                 <yk-text type="danger "
-                v-show="content?.complaint!>0"
+                v-show="content?.complaint"
                 >
                     举报 {{ content?.complaint }}
                 </yk-text>
@@ -43,6 +43,7 @@ const props = withDefaults(defineProps<ReplyProps>(),{
 
 <style lang="less" scoped>
 .reply {
+    width: 100%;
     &__name {
         display: flex;
         flex-direction: column;
@@ -51,6 +52,7 @@ const props = withDefaults(defineProps<ReplyProps>(),{
         border-bottom: 1px solid @line-color-s;
         width: 100%;
         padding-bottom: @space-l;
+        flex:1
     }
 }
 </style>
