@@ -6,7 +6,7 @@
         </yk-space>
         <yk-space align="center" size="xl">
             <yk-badge is-dot>
-                <IconMailOutline style="font-size: 20px;"/>
+                <IconMailOutline style="font-size: 20px;" @click="changeActive(true)"/>
             </yk-badge>
             <yk-avatar img-url="https://bucket.redeyes.top/avater.webp"></yk-avatar>
             <div>
@@ -14,25 +14,29 @@
             </div>
             <yk-button>退出</yk-button>
         </yk-space>
+        <Information :active="active" @close="changeActive(false)"  />
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup> 
+import {ref} from "vue"
 import { useRouter } from 'vue-router';
+import { Information } from '../../components/reply/index'; //导入私信
+import router from "../../router";
+const active = ref<boolean>(false)
 
-export default {
-    setup() {
-        const router = useRouter();
-        
-        const backHome = () => {
-            router.push('/');
-        };
+const backHome = () => {
+  router.push('/')
+}
 
-        return {
-            backHome
-        };
-    }
-};
+//展开关私信
+
+const changeActive=(e:boolean)=>{
+    active.value=e
+
+}
+
+
 </script>
 
 <style lang="less" scoped>
