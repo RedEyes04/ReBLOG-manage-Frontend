@@ -1,7 +1,7 @@
 <template>
     <!-- 头像 -->
     <yk-space size="m" class="reply">
-        <yk-avatar img-url="https://bucket.redeyes.top/avater.webp"></yk-avatar>
+        <yk-avatar img-url="https://bucket.redeyes.top/avater.webp" v-if="isComment"></yk-avatar>
 
         <yk-space dir="vertical" size="s" class="reply__main">
             <div class="reply__name">
@@ -17,7 +17,7 @@
             <yk-text type="secondary">
                 {{ content?.comment }}
             </yk-text>
-            <yk-space size="s" align="center">
+            <yk-space size="s" align="center" v-if="isComment">
                 <yk-tag type="primary">
                     {{ content?.article?.title }}
                 </yk-tag>

@@ -67,12 +67,14 @@ const changePage=(e:number)=>{
 
 //删除评论
 const deleteComment = (e: number) => {
-  comments.value = comments.value.filter((obj: any) => {
-    return obj.id !== e
-  })
-  proxy.$message({ type: 'primary', message: '删除成功' })
+  // 过滤掉删除的评论
+  comment.data.list = comment.data.list.filter((obj: any) => obj.id !== e);
 
-}
+  // 重新获取数据，确保当前页总是满的
+  drwCommentData();
+
+  proxy.$message({ type: 'primary', message: '删除成功' });
+};
 
 onMounted(() => {
   drwCommentData()
