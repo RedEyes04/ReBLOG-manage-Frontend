@@ -25,6 +25,7 @@ declare module 'vue' {
     Reply: typeof import('./src/components/reply/reply.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Subset: typeof import('./src/components/subset/subset.vue')['default']
     TopTitle: typeof import('./src/components/bar/TopTitle.vue')['default']
     YkAvatar: typeof import('@yike-design/ui')['YkAvatar']
     YkBadge: typeof import('@yike-design/ui')['YkBadge']

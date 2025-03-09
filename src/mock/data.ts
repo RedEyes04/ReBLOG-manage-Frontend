@@ -85,3 +85,34 @@ export const comment = Mock.mock({
     }]
   }
 })
+
+
+//文章状态
+export const state = Mock.mock({
+  "data": [
+    {
+      "id": 0,
+      "name": "已发布",
+      "value|0-30": 4
+    },
+    {
+      "id": 1,
+      "name": "未发布",
+      "value|0-30": 4
+    }
+  ]
+})
+
+
+//分组
+export const subset = Mock.mock({
+  "data": {
+    "count": 123,
+    "list|4": [{
+      "id|+1": 0,
+      "name": "@ctitle(2,6)",
+      "value|0-30": 4
+     
+    }]
+  }
+})
