@@ -1,93 +1,97 @@
 <template>
-<yk-drawer placement="right" :show="active" @close="closes" :title="'私信[' + count + ']'" >
-    
+  <yk-drawer placement="right" :show="active" @close="closes" :title="'私信' + count">
     <yk-space dir="vertical">
-      <reply v-for="item in comments" :key="item.id" :content="item" style="padding-top: 15px;" @delete="deleteComment"
-        :isComment="false" />
-      <!-- <reply /> -->
-    </yk-space> <template #footer>
-      <yk-pagination :total="count" simple @change="changePage" />
+      <reply v-for="item in comments" :key="item.id" :content="item" @delete="deleteComment" :isComment="false" />
+    </yk-space>
+    <template #footer>
+      <yk-pagination :total="count" simple @change="changePage"></yk-pagination>
     </template>
-
   </yk-drawer>
 </template>
 
 <script lang="ts" setup>
-import type { InformationProps } from '../reply/reply';
-import { toRefs } from 'vue';
-import { onMounted, ref, getCurrentInstance } from 'vue';
+import { toRefs } from "vue";
+import type { InformationProps } from "./reply"
+import { onMounted, ref, getCurrentInstance } from "vue"
 import { comment } from "../../mock/data"
+
 const proxy: any = getCurrentInstance()?.proxy
 
 const props = withDefaults(defineProps<InformationProps>(), {
   active: false,
-  pageSize: 8
+  pageSize: 8,
 })
-const { active } = toRefs(props)
-
 const emits = defineEmits(["close"])
+
+const { active } = toRefs(props)
 const closes = () => {
-  emits("close", false); // 通知父组件更新 active
-};
+  emits("close", false)
+}
 
 //总数
 const count = ref<number>(123)
 //数据内容
-const comments = ref()
+const comments = ref();
 
 //请求
-type Request = {
+type Requset = {
   token?: string;
   pageSize: number;//单页条数；
   nowPage: number;//当前页
 }
 
-const request: Request = {
+const request: Requset = {
   pageSize: props.pageSize,
   nowPage: 1,
-  // count:false
 }
+
 //获取数据
 const drwCommentData = () => {
-  let data = comment.data
-  // console.log(data)
-
+  let data = comment.data;
+  count.value = data.count;
   comments.value = data.list.slice(
     (request.nowPage - 1) * request.pageSize,
     request.nowPage * request.pageSize
-  )
+  );
 }
-//翻页
+
+//翻页 
 const changePage = (e: number) => {
   request.nowPage = e;
   drwCommentData()
 }
 
-
 //删除评论
+// const deleteComment = (e: number) => {
+//   comments.value = comments.value.filter((obj: any) => {
+//     return obj.id !== e
+//   })
+//   proxy.$message({ type: 'primary', message: '删除成功' })
+// }
+// 删除评论
 const deleteComment = (e: number) => {
-  // 过滤掉删除的评论
+  // 在数据源中删除该评论（模拟后端操作）
   comment.data.list = comment.data.list.filter((obj: any) => obj.id !== e);
+
+  // 更新总数
+  count.value -= 1;
+
+  // 计算当前页是否还有数据，如果当前页数据删完了，并且不是第一页，则回到上一页
+  if (comments.value.length === 1 && request.nowPage > 1) {
+    request.nowPage -= 1;
+  }
 
   // 重新获取数据
   drwCommentData();
 
-  // 这里手动通知父组件 保持窗口开启
-  emits("close", true);
-
+  // 提示删除成功
   proxy.$message({ type: 'primary', message: '删除成功' });
 };
-// const deleteComment = (e: number) => {
-//   comment.data.list = comment.data.list.filter((obj: any) => obj.id !== e);
-//   drwCommentData(); // 重新获取数据，刷新当前列表
-//   proxy.$message({ type: 'primary', message: '删除成功' });
-// };
 
 
 onMounted(() => {
   drwCommentData()
 })
-
 </script>
 
 <style lang="less" scoped></style>
