@@ -23,5 +23,6 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',
+    allowedHosts: ["reblog.redeyes.top"]
   },
 })
