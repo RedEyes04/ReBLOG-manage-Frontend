@@ -18,6 +18,7 @@ export type ReplyData = {
     id:number | string
     name:string|number
     value:number
+    moment?:string
 
   }
   
