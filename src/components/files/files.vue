@@ -24,11 +24,11 @@
 
         </div>
         <div class="files__main">
-            <p></p>
+            <filesItem v-for="item in files" :data="item" :key="item.id"/>
 
         </div>
     </div>
-    <div class="comment__pagination">
+    <div class="pagination">
       <yk-pagination :total="count" size="m" @change="changePage"></yk-pagination>
     </div>
 </template>
@@ -36,6 +36,7 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
 import { mkfile } from "../../mock/data"
+import filesItem from './files-item.vue';
 
 
 type FileProps = {
@@ -92,6 +93,10 @@ const drwData = (e:boolean) => {
     request.nowPage * request.pageSize
   );
   console.log((files) )
+//加入选择项
+for(let i = 0 ; i <files.value.length;i++){
+    files.value[i].selected=true
+}
 }
 
 //翻页 
@@ -144,5 +149,22 @@ onMounted(()=>{
             }
         }
     }
+    &__main {
+    padding: 24px 0 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    row-gap: 32px;
+    column-gap: 24px;
+    justify-content: center;
+  }
+   
 }
+.pagination {
+    padding: @space-l 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    
+  }
 </style>
