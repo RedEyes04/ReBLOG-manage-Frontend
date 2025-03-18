@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
 import IndexView from '../views/IndexView.vue'
-import hello from '../components/HelloWorld.vue'
+// import hello from '../components/HelloWorld.vue'
 
 const routes = [
     {
@@ -21,12 +21,7 @@ const routes = [
           path: 'localfile',
           component:()=>import('../views/FileView.vue'),
         },
-        {
-          // 当 /user/:id/posts 匹配成功
-          // UserPosts 将被渲染到 User 的 <router-view> 内部
-          path: 'hello',
-          component: hello,
-        },
+        
         
       ],
     },

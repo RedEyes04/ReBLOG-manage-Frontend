@@ -15,8 +15,9 @@
   
   <script lang="ts" setup>
   import TopTitle from '../components/bar/TopTitle.vue';
-//   import filesVue from '../components/files/files.vue';
+
   import subsetVue from '../components/subset/subset.vue';
+  import filesVue from '../components/files/files.vue';
   </script>
   
   <style lang="less" scoped>
