@@ -22,6 +22,15 @@ export type ReplyData = {
 
   }
 
+  //标签
+  export interface LabelData{
+    id:number | string
+    name:string|number
+    value:number
+    moment?:string
+
+  }
+
   //文件
 
   export interface FileData {

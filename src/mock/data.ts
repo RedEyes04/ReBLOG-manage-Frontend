@@ -150,3 +150,19 @@ export const mkfile = Mock.mock({
     }
   ]
 })
+
+
+
+//标签
+export const mklabel = Mock.mock({
+  "data": {
+    "count": 123,
+    "list|4": [{
+      "id|+1": 0,
+      "name": "@ctitle(2,5)",
+      "value|0-30": 4,
+      "moment": "@datetime()",
+
+    }]
+  }
+})

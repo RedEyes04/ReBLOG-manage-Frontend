@@ -1,7 +1,7 @@
 export const navLinks=[
     {
         path:'overview',
-        name:'总览',
+        name:'数据总览',
         icon:'IconHomepageFill'
     },
     {
@@ -11,7 +11,7 @@ export const navLinks=[
     },
     {
         path:'article',
-        name:'文章',
+        name:'博客文章',
         icon:'IconFileFill'
     },
     {
@@ -21,7 +21,7 @@ export const navLinks=[
     },
     {
         path:'diary',
-        name:'日记',
+        name:'随笔随记',
         icon:'IconBookmarkFill'
     },
     {
