@@ -40,7 +40,7 @@ const deletelabel = (e: number | string) => {
       return obj.id !== e
     }
   )
-  proxy.$message({ type: 'primary', message: '删除成功' })
+  // proxy.$message({ type: 'primary', message: '删除成功' })
 }
 
 watch(

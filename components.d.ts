@@ -8,6 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Article: typeof import('./src/components/article/article.vue')['default']
+    ArticleItem: typeof import('./src/components/article/article-item.vue')['default']
     Comment: typeof import('./src/components/reply/comment.vue')['default']
     Datas: typeof import('./src/components/overview/datas.vue')['default']
     Files: typeof import('./src/components/files/files.vue')['default']
@@ -16,10 +18,16 @@ declare module 'vue' {
     HeaderBar: typeof import('./src/components/bar/HeaderBar.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCirclePlusOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconCirclePlusOutline']
+    IconCommentOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconCommentOutline']
     IconDeleteOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconDeleteOutline']
+    IconEyeOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconEyeOutline']
+    IconFillOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconFillOutline']
+    IconLikeOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconLikeOutline']
     IconMailOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconMailOutline']
     IconPlusOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconPlusOutline']
+    IconRevokeOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconRevokeOutline']
     IconSearchOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconSearchOutline']
+    IconSendOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconSendOutline']
     IconSettingsFill: typeof import('@yike-design/ui/es/components/svg-icon')['IconSettingsFill']
     IconSettingsOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconSettingsOutline']
     IconSwitchOutline: typeof import('@yike-design/ui/es/components/svg-icon')['IconSwitchOutline']
@@ -61,5 +69,6 @@ declare module 'vue' {
     YkText: typeof import('@yike-design/ui')['YkText']
     YkTheme: typeof import('@yike-design/ui')['YkTheme']
     YkTitle: typeof import('@yike-design/ui')['YkTitle']
+    YkTooltip: typeof import('@yike-design/ui')['YkTooltip']
   }
 }

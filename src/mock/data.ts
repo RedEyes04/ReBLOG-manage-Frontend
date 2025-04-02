@@ -166,3 +166,26 @@ export const mklabel = Mock.mock({
     }]
   }
 })
+
+
+
+//文章数据
+export const mkarticle = Mock.mock({
+  "count": 64,
+  "list|64": [
+    {
+      "id|+1": 0,
+      "cover|1": photos,
+      "title": "@ctitle(4, 12)",
+      "moment": "@datetime()",
+      "label|0-3": ["@ctitle(2, 4)"],
+      "introduce": "@cparagraph(1, 4)",
+      "views|12-429": 122,
+      "comment|8-24": 12,
+      "praise|8-123": 42,
+      "subsetId|0-4": 0,
+      "state|0-1": 0,
+    }
+  ]
+})
+

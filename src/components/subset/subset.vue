@@ -43,99 +43,98 @@
      </yk-modal>
    </div>
  </template>
-
-<script lang="ts" setup>
-import { onMounted, ref, getCurrentInstance } from "vue";
-import { subset, state } from "../../mock/data";
-import { useSubsetStore } from "../store/subset";
-import subsetManage from "./subset-manage.vue";
-const emits = defineEmits(["nowSubset"]);
-
-const subsetStore = useSubsetStore();
-const selected = ref<number | string>("-1all");
-
-const changeOption = (id: number | string, type: string) => {
+ 
+ <script lang="ts" setup>
+ import { onMounted, ref, getCurrentInstance } from 'vue';
+ import { subset, state } from '../../mock/data';
+ import { useSubsetStore } from '../store/subset';
+ import subsetManage from './subset-manage.vue';
+ 
+ const emits = defineEmits(['nowSubset'])
+ 
+ //store
+ const subsetStore = useSubsetStore();
+ 
+ //新建分组内容
+ const inputValue = ref<number | string>()
+ 
+ //当前选择
+ const selected = ref<string>('-1all')
+ 
+ //选择切换 
+ const changeOption = (id: number | string, type: string) => {
    if (id + type != selected.value) {
-      selected.value = id + type;
-      emits("nowSubset", { id, type });
+     selected.value = id + type
+     emits('nowSubset', { id, type })
    }
-};
-
-
-const inputValue= ref<number|string>()
-const proxy: any = getCurrentInstance()?.proxy;
-//取消
-function cancel() {
-   inputValue.value=""
-}
-function confirm() {
-   if(inputValue.value){
-      let obj={
-         id:-2,
-         name:inputValue.value,
-         value:0
-      }
-      subsetStore.data.push(obj)
-      inputValue.value=""
-      proxy.$message({ type: 'primary', message: '插入完成' })
-
-   }else
-   proxy.$message({ type: 'warning', message: '请输入' })
-
-}
-
-const rawSubset = () => {
-   subsetStore.data = subset.data.list;
-   subsetStore.count = subset.data.count;
-};
-const visible = ref<boolean>(false)
-const showModal = () => {
-   if(visible.value){
-      visible.value = false
-  
-}
-else{
-   visible.value=true
-}
-}
-onMounted(() => {
+ }
+ 
+ //获取分组 
+ const rawSubset = () => {
+   subsetStore.data = subset.data.list
+   subsetStore.count = subset.data.count
+ }
+ 
+ const proxy: any = getCurrentInstance()?.proxy
+ //取消
+ function cancel() {
+   inputValue.value = ""
+ }
+ //新建分组 
+ function confirm() {
+   if (inputValue.value) {
+     let obj = {
+       id: -2,
+       name: inputValue.value,
+       value: 0
+     }
+     subsetStore.data.push(obj)
+     inputValue.value = ""
+     proxy.$message({ type: 'primary', message: '插入完成' })
+ 
+   } else {
+     proxy.$message({ type: 'warning', message: '请输入' })
+   }
+ }
+ 
+ //管理分组 
+ const visible = ref<boolean>(false)
+ const showModal = () => {
+   visible.value = !visible.value
+ }
+ 
+ onMounted(() => {
    rawSubset();
-});
-</script>
-
-<style lang="less" scoped>
-.subset {
-   padding: @space-m @space-xl;
+ })
+ </script>
+ 
+ <style lang="less" scoped>
+ .subset {
+   padding: @space-l @space-xl;
    border-radius: @radius-m;
    background-color: @bg-color-l;
    width: 100%;
    display: flex;
    justify-content: space-between;
    align-items: center;
-
+ 
    .yk-text {
-      cursor: pointer;
+     cursor: pointer
    }
-}
-
-.subset__menu {
-   padding: 0 @space-s;
-   background: @bg-color-m;
-   border-radius: @radius-r;
-   line-height: 32px;
-   user-select: none;
-   cursor: pointer;
-
-   &-selected {
-      background: @pcolor-1;
-      color: @pcolor;
-      font-weight: 500;
+ 
+   &__menu {
+     padding: 0 @space-l;
+     background: @bg-color-m;
+     border-radius: @radius-r;
+     line-height: 32px;
+     user-select: none;
+     cursor: pointer;
+ 
+     &-seledted {
+       background: @pcolor-1;
+       color: @pcolor;
+       font-weight: 500;
+     }
    }
-}
-
-.subset__actions {
-   display: flex;
-   align-items: center;
-   gap: 12px;
-}
-</style>
+ }
+ </style>

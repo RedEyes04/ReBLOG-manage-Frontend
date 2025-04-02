@@ -7,7 +7,7 @@ export type CommentProps = {
 
 export type ReplyProps = {
   content?: ReplyData;
-  isComment: boolean;
+  isComment?: boolean;
 }
 
 export type InformationProps = {
