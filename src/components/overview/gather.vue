@@ -6,7 +6,7 @@
         <yk-title :level="2" style="margin: 0;">{{ item.total }}</yk-title>
       </yk-space>
       
-      <yk-button v-if="index > 0" size="xl" type="secondary" shape="square">
+      <yk-button v-if="index > 0" size="xl" type="secondary" shape="square" @click="editPage(item.path)">
         <IconPlusOutline />
       </yk-button>
     </div>
@@ -18,6 +18,8 @@
 import { onMounted, ref } from 'vue';
 import { overLink } from '../../utils/menu';
 import { overview } from '../../mock/data';
+import { useRouter } from 'vue-router';
+const  router = useRouter()
 const gathers = ref(overLink)
 const drawGatherData = () => {
   let data = overview.data;
@@ -27,6 +29,10 @@ const drawGatherData = () => {
   gathers.value[3].total = data.diary
 
 
+}
+//跳转
+const editPage = (n:string)=>{
+  router.push(n)
 }
 onMounted(() => {
   drawGatherData();
