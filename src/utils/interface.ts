@@ -56,3 +56,13 @@ export interface ArticleDate {
   praise: number;//点赞次数
   content?: string | string[]
 }
+
+//日记
+export interface DiaryDate {
+  id: number;
+  title: string;
+  moment: Date;//时间
+  weatherId: number;//天气
+  content: string;
+  picture?: string[];
+}
