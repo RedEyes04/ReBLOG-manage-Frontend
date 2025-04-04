@@ -2,7 +2,7 @@
     <div class="article-item">
       <yk-space size="xl">
         <div class="article-item__cover">
-          <yk-image :src="cover" width="160" height="120" :is-lazy="true" :preview="false" fit="cover" />
+          <yk-image :src="cover" width="180" height="120" :is-lazy="true" :preview="false" fit="cover" />
           <p class="article-item__unpublish" v-if="props.data?.state === 0">未发布</p>
         </div>
         <div style="width:100%">
@@ -85,7 +85,7 @@
       position: relative;
       border-radius: @radius-m;
       overflow: hidden;
-      width: 160px;
+      width: 180px;
       flex: none;
     }
   

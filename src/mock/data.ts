@@ -189,3 +189,41 @@ export const mkarticle = Mock.mock({
   ]
 })
 
+const photoarr = [
+  ["a.jpg"],
+  ["b.jpg", "c.jpg"],
+  ["d.jpg", "e.jpg", "f.jpg"],
+  ["g.jpg", "h.jpg", "i.jpg"],
+  ["j.jpg", "k.jpg", "l.jpg"],
+]
+
+//图库数据
+export const mkgallery = Mock.mock({
+  "count": 64,
+  "list|64": [
+    {
+      "id|+1": 0,
+      "cover|1": photos,
+      "title": "@ctitle(4, 12)",
+      "moment": "@datetime()",
+      "label|0-3": ["@ctitle(2, 4)"],
+      "introduce": "@cparagraph(1, 4)",
+      "views|12-429": 122,
+      "comment|8-24": 12,
+      "praise|8-123": 42,
+      "subsetId|0-4": 0,
+      "content|1": photoarr,
+    }
+  ]
+})
+
+
+//图片列表
+export const mphotos = Mock.mock({
+  "data|6": [
+    {
+      "id|+1": 0,
+      "url|1": photos,
+    }
+  ]
+})

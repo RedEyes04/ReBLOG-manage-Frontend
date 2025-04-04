@@ -14,6 +14,8 @@ declare module 'vue' {
     Datas: typeof import('./src/components/overview/datas.vue')['default']
     Files: typeof import('./src/components/files/files.vue')['default']
     FilesItem: typeof import('./src/components/files/files-item.vue')['default']
+    Gallery: typeof import('./src/components/gallery/gallery.vue')['default']
+    GalleryItem: typeof import('./src/components/gallery/gallery-item.vue')['default']
     Gather: typeof import('./src/components/overview/gather.vue')['default']
     HeaderBar: typeof import('./src/components/bar/HeaderBar.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
