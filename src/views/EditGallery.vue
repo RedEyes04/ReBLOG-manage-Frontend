@@ -11,7 +11,7 @@
     <yk-space style="width: 100%;">
         <editPhotoVue/>
         <div class="edit-form">
-            <formsVue style="width: 420px;"/>
+            <formsVue style="width: 420px;" :classify="0"/>
         </div>
     </yk-space>
   </div>
