@@ -3,13 +3,13 @@
     <yk-space dir="vertical" :size="48" class="login__main" align="center">
       <yk-space dir="vertical" align="center">
         <img src="../assets/icon不透明1.png" class="logo" />
-        <span class="name">欢迎使用REBLOG管理系统</span>
+        <span class="name">欢迎注册REBLOG管理系统</span>
       </yk-space>
       <yk-space dir="vertical">
         <yk-input v-model="user.name" placeholder="用户名" style="width:320px" size="xl" />
-        <yk-input v-model="user.psw" placeholder="密码" type="password" style="width:320px" size="xl" />
+        <yk-input v-model="user.psw" placeholder="密码：不能少于4位数" type="password" style="width:320px" size="xl" />
       </yk-space>
-      <yk-button long size="xl" @click="sumbit">登录</yk-button>
+      <yk-button long size="xl" @click="sumbit">注册</yk-button>
     </yk-space>
   </div>
 </template>
@@ -29,7 +29,7 @@ const user = ref({
 
 //提交
 const sumbit = () => {
-  if (user.value.name && user.value.psw) {
+  if (user.value.name && user.value.psw && user.value.psw.length > 3) {
     console.log('ok')
   } else {
     proxy.$message({ type: 'warning', message: '输入不完整！' })
