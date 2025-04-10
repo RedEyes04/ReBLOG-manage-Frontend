@@ -61,9 +61,6 @@ export const survey = Mock.mock({
   }
 })
 
-
-
-
 //评论
 export const comment = Mock.mock({
   "data": {
@@ -86,19 +83,17 @@ export const comment = Mock.mock({
   }
 })
 
-
 //文章状态
 export const state = Mock.mock({
   "data": [
     {
       "id": 0,
       "name": "已发布",
-      "value|0-30": 4
-    },
-    {
+      "value|0-30": 4,
+    }, {
       "id": 1,
       "name": "未发布",
-      "value|0-30": 4
+      "value|0-30": 4,
     }
   ]
 })
@@ -113,10 +108,24 @@ export const subset = Mock.mock({
       "name": "@ctitle(2,5)",
       "value|0-30": 4,
       "moment": "@datetime()",
-
     }]
   }
 })
+
+
+//标签
+export const mklabel = Mock.mock({
+  "data": {
+    "count": 123,
+    "list|12": [{
+      "id|+1": 0,
+      "name": "@ctitle(2,5)",
+      "moment": "@datetime()",
+    }]
+  }
+})
+
+//图片合集
 const photos = [
   "a.jpg",
   "b.jpg",
@@ -137,6 +146,14 @@ const photos = [
   "q.jpg",
 ];
 
+const photoarr = [
+  ["a.jpg"],
+  ["b.jpg", "c.jpg"],
+  ["d.jpg", "e.jpg", "f.jpg"],
+  ["g.jpg", "h.jpg", "i.jpg"],
+  ["j.jpg", "k.jpg", "l.jpg"],
+]
+
 //文件数据 
 export const mkfile = Mock.mock({
   "count": 64,
@@ -150,23 +167,6 @@ export const mkfile = Mock.mock({
     }
   ]
 })
-
-
-
-//标签
-export const mklabel = Mock.mock({
-  "data": {
-    "count": 123,
-    "list|4": [{
-      "id|+1": 0,
-      "name": "@ctitle(2,5)",
-      "value|0-30": 4,
-      "moment": "@datetime()",
-
-    }]
-  }
-})
-
 
 
 //文章数据
@@ -189,13 +189,6 @@ export const mkarticle = Mock.mock({
   ]
 })
 
-const photoarr = [
-  ["a.jpg"],
-  ["b.jpg", "c.jpg"],
-  ["d.jpg", "e.jpg", "f.jpg"],
-  ["g.jpg", "h.jpg", "i.jpg"],
-  ["j.jpg", "k.jpg", "l.jpg"],
-]
 
 //图库数据
 export const mkgallery = Mock.mock({
@@ -216,11 +209,13 @@ export const mkgallery = Mock.mock({
     }
   ]
 })
+
+//日记数据
 export const mkdiary = Mock.mock({
   "count": 64,
   "list|64": [
     {
-      "id|+1": 0, 
+      "id|+1": 0,
       "title": "@ctitle(4, 12)",
       "moment": "@datetime()",
       "weatherId|0-7": 0,
@@ -229,7 +224,6 @@ export const mkdiary = Mock.mock({
     }
   ]
 })
-
 
 //图片列表
 export const mphotos = Mock.mock({
@@ -240,5 +234,3 @@ export const mphotos = Mock.mock({
     }
   ]
 })
-
-

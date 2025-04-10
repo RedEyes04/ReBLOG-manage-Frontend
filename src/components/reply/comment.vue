@@ -18,7 +18,7 @@
 import { onMounted, ref, getCurrentInstance } from "vue"
 import reply from "./reply.vue";
 import { comment } from "../../mock/data"
-import type { CommentProps } from "./reply"
+import { CommentProps } from "./reply"
 
 const proxy: any = getCurrentInstance()?.proxy
 
@@ -60,26 +60,13 @@ const changePage = (e: number) => {
   drwCommentData()
 }
 
-// 删除评论
+//删除评论
 const deleteComment = (e: number) => {
-  // 在数据源中删除该评论（模拟后端操作）
-  comment.data.list = comment.data.list.filter((obj: any) => obj.id !== e);
-
-  // 更新总数
-  count.value -= 1;
-
-  // 计算当前页是否还有数据，如果当前页数据删完了，并且不是第一页，则回到上一页
-  if (comments.value.length === 1 && request.nowPage > 1) {
-    request.nowPage -= 1;
-  }
-
-  // 重新获取数据
-  drwCommentData();
-
-  // 提示删除成功
-  proxy.$message({ type: 'primary', message: '删除成功' });
-};
-
+  comments.value = comments.value.filter((obj: any) => {
+    return obj.id !== e
+  })
+  proxy.$message({ type: 'primary', message: '删除成功' })
+}
 
 onMounted(() => {
   drwCommentData()

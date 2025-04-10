@@ -2,8 +2,8 @@
   <div class="login" :style="{ height: pageHeight + 'px' }">
     <yk-space dir="vertical" :size="48" class="login__main" align="center">
       <yk-space dir="vertical" align="center">
-        <img src="../assets/icon不透明1.png" class="logo" />
-        <span class="name">欢迎注册REBLOG管理系统</span>
+        <img src="../assets/yike.svg" class="logo" />
+        <span class="name">欢迎注册逸刻博客后台</span>
       </yk-space>
       <yk-space dir="vertical">
         <yk-input v-model="user.name" placeholder="用户名" style="width:320px" size="xl" />
@@ -60,8 +60,7 @@ const sumbit = () => {
     }
 
     .logo {
-      height: 200;
-      width: 250px;
+      width: 84px;
 
     }
   }

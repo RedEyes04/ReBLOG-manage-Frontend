@@ -25,7 +25,7 @@
 
 <script lang="ts" setup>
 import { getCurrentInstance } from "vue"
-import { useSubsetStore } from '../store/subset';
+import { useSubsetStore } from '../../store/subset';
 const proxy: any = getCurrentInstance()?.proxy
 
 //store

@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { YikeResolver } from '@yike-design/resolver'
+import { YikeResolver } from '@yike-design/resolver' // https://vitejs.dev/config/ export default
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
@@ -12,7 +13,7 @@ export default defineConfig({
     Components({ resolvers: [YikeResolver({ sideEffect: true })] }),
   ],
   css: {
-    // css预处理器，方便直接使用组件样式变量（按需配置）
+    // css预处理器
     preprocessorOptions: {
       less: {
         charset: false,
@@ -20,9 +21,5 @@ export default defineConfig({
           '@import "@yike-design/ui/es/components/styles/basis.less";',
       },
     },
-  },
-  server: {
-    host: '0.0.0.0',
-    allowedHosts: ["reblog.redeyes.top"]
   },
 })

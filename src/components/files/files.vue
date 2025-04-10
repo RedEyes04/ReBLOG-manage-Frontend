@@ -40,7 +40,7 @@
 import { onMounted, ref, getCurrentInstance } from "vue"
 import { mkfile } from "../../mock/data";
 import filesItem from "./files-item.vue"
-import { useSubsetStore } from '../store/subset';
+import { useSubsetStore } from '../../store/subset';
 import './files.less'
 
 //store

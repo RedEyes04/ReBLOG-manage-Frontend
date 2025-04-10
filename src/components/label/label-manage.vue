@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { getCurrentInstance, ref, watch } from "vue"
-import type { LabelData } from '../../utils/interface';
+import { LabelData } from '../../utils/interface';
 
 type labelProps = {
   label: LabelData[]
@@ -40,7 +40,7 @@ const deletelabel = (e: number | string) => {
       return obj.id !== e
     }
   )
-  // proxy.$message({ type: 'primary', message: '删除成功' })
+  proxy.$message({ type: 'primary', message: '删除成功' })
 }
 
 watch(

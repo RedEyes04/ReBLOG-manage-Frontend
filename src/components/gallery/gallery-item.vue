@@ -51,7 +51,7 @@
 <script lang="ts" setup>
 import { computed } from "vue"
 import { ArticleDate } from '../../utils/interface';
-import { momentm } from "../../utils/moment";
+import { momentm } from "../../utils/memont";
 
 
 type galleryItemProps = {

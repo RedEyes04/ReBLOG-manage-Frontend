@@ -33,11 +33,8 @@
 <script lang="ts" setup>
 import { computed, ref } from "vue";
 import { FileData } from "../../utils/interface"
-import { useSubsetStore } from '../store/subset';
-import { getCurrentInstance } from 'vue'
-
+import { useSubsetStore } from '../../store/subset';
 import './files.less'
-const proxy: any = getCurrentInstance()?.proxy
 
 //store
 const subsetStore = useSubsetStore();
@@ -62,7 +59,7 @@ const changeOption = (e: number | string) => {
 }
 
 function cancel() {
-  proxy.$message({ type: 'warning', message: '你点击了取消按钮' })
+  // proxy.$message({ type: 'warning', message: '你点击了取消按钮' })
 }
 function confirm() {
   //如果当前选择于之前不同时
@@ -70,10 +67,7 @@ function confirm() {
     let data = {
       id: props.data?.id,
       subsetId: subsetSelectedId.value,
-      
     }
-    proxy.$message({ type: 'primary', message: '你点击了确认按钮' })
-
     emits("changeSubsetId", data)
   }
 
